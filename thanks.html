@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Недвижимость на Бали</title>
+   <link rel="stylesheet" href="css/main.css">
+   <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+   <header class="header">
+      <picture class="header__img">
+         <source srcset="img/2.webp" media="(max-width: 1000px)">
+         <img src="img/1.webp" alt="">
+      </picture>
+      <div class="header__content">
+         <h1 class="header__title">Спасибо!<br>Менеджер свяжется с вами в ближайшее время!</h1>
+         <p>
+            <i style="color:burlywood">Пожалуйста, проверьте ваши данные:</i>
+            <br>
+            Имя: <span style="color: #d34085;" id="namePlaceholder"></span>
+            <br>
+            Телефон: <span style="color: #d34085;" id="telPlaceholder"></span>
+            <br>
+            
+            
+         </p>
+         <a href="index.html" id="header__btn" class="header__btn btn">На главную</a>
+      </div>
+   </header>
+
+
+   
+
+
+   <footer class="footer">
+    <p class="info">
+      ИП Антонова Анна Михайловна<br>
+      Юридический адрес: Краснодарский край, Анапский район, город Анапа.<br>
+      Контакты: worldrealty@gmail.com, +79028735676<br>
+      ИНН 230106458885
+    </p>
+    <p class="info">
+      <a href="docs/user.pdf" target="_blank">Пользовательское соглашение</a><br>
+      <a href="docs/privacy.pdf" target="_blank">Политика конфиденциальности</a><br>
+      <a href="docs/cookie.pdf" target="_blank">Политика использования файлов cookie</a>
+    </p>
+   </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const urlParams = new URLSearchParams(window.location.search);
+
+            const name = urlParams.get("name");
+            const tel = urlParams.get("tel");
+
+            document.getElementById("namePlaceholder").innerText = name || '';
+            document.getElementById("telPlaceholder").innerText = tel || '';
+
+            const btn = document.getElementById("header__btn");
+            btn.addEventListener("click", function () {
+                window.location.href = "./index.html"
+            });
+        });
+    </script>
+</body>
+
+</html>
