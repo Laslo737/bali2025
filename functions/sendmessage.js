@@ -34,12 +34,12 @@ export async function onRequestPost(context) {
     });
     console.log(output.phone);
     
-    // let getTelephone = output.phone.trim() !== '' ? output.phone : output.whatsapp
+    let getTelephone = output.phone.trim() !== '' ? output.phone : output.whatsapp
 
     return new Response(data, {
       status: 302,
       headers: {
-        // 'Location': `./thanks.html?name=${output.name}&tel=${getTelephone}`,
+        'Location': `./thanks.html?name=${output.name}&tel=${getTelephone}`,
         'Content-Type': 'application/json;charset=utf-8',
       },
     });

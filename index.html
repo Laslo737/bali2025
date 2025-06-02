@@ -100,7 +100,8 @@
                   </label>
 
                   <label for="mon2" class="form__label">
-                     <input type="radio" name="Оплата" id="mon2" value="Полная оплата с индивидуальной скидкой" required>
+                     <input type="radio" name="Оплата" id="mon2" value="Полная оплата с индивидуальной скидкой"
+                        required>
                      <span>Полная оплата с индивидуальной скидкой</span>
                   </label>
                </fieldset>
@@ -192,10 +193,13 @@
 
                   </div>
                   <label for="" class="last__label">
-                     <input type="text" id="input__name" name="Имя" placeholder="Ваше имя*" required>
-                     <input type="tel" id="input__whatsapp" name="Ватсап" placeholder="Номер WhatsApp*">
-                     <input type="tel" id="input__telefon" name="Телефон" placeholder="Номер телефона*">
+                     <input type="text" id="name" name="name" placeholder="Ваше имя*" required>
+                     <input type="tel" id="phone" name="whatsapp" placeholder="Номер WhatsApp*">
+                     <input type="tel" id="phone1" name="phone" placeholder="Номер телефона*">
                   </label>
+                  <input type="hidden" name="sub1" id="sub1" value="" />
+                  <input type="hidden" name="keyword" id="keyword" value="" />
+                  <input type="hidden" name="gclid" id="gclid" value="" />
                   <button class="btn form__btn" type="submit">Готово</button>
                </div>
 
@@ -235,19 +239,33 @@
    </div>
 
    <footer class="footer">
-    <p class="info">
-      ИП Антонова Анна Михайловна<br>
-      Юридический адрес: Краснодарский край, Анапский район, город Анапа.<br>
-      Контакты: worldrealty@gmail.com, +79028735676<br>
-      ИНН 230106458885
-    </p>
-    <p class="info">
-      <a href="docs/user.pdf" target="_blank">Пользовательское соглашение</a><br>
-      <a href="docs/privacy.pdf" target="_blank">Политика конфиденциальности</a><br>
-      <a href="docs/cookie.pdf" target="_blank">Политика использования файлов cookie</a>
-    </p>
+      <p class="info">
+         ИП Антонова Анна Михайловна<br>
+         Юридический адрес: Краснодарский край, Анапский район, город Анапа.<br>
+         Контакты: worldrealty@gmail.com, +79028735676<br>
+         ИНН 230106458885
+      </p>
+      <p class="info">
+         <a href="docs/user.pdf" target="_blank">Пользовательское соглашение</a><br>
+         <a href="docs/privacy.pdf" target="_blank">Политика конфиденциальности</a><br>
+         <a href="docs/cookie.pdf" target="_blank">Политика использования файлов cookie</a>
+      </p>
    </footer>
+   <script>
+      document.addEventListener("DOMContentLoaded", function () {
 
+         const urlParams = new URLSearchParams(window.location.search);
+
+         const sub1 = urlParams.get("sub1");
+         const keyword = urlParams.get("keyword");
+         const gclid = urlParams.get("gclid");
+
+         document.getElementById("sub1").value = sub1 || "";
+         document.getElementById("keyword").value = keyword || "";
+         document.getElementById("gclid").value = gclid || "";
+
+      });
+   </script>
 </body>
 
 </html>
