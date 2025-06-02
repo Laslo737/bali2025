@@ -34,7 +34,7 @@ export async function onRequestPost(context) {
     });
     console.log(output.phone);
     
-    let getTelephone = output.input__telefon.trim() !== '' ? output.input__telefon : output.input__whatsapp
+    let getTelephone = output.phone.trim() !== '' ? output.phone : output.whatsapp
 
     return new Response(data, {
       status: 302,
